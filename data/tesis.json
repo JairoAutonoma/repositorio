@@ -1,0 +1,58 @@
+[
+  {
+    "id": 4,
+    "titulo": "mk",
+    "archivo": "mk_estudiante.pdf",
+    "autor": "estudiante@unap.edu.pe",
+    "estado": "Certificada",
+    "comentario": "---",
+    "nota": "17",
+    "firma": {
+      "firmado_por": "decano@unap.edu.pe",
+      "fecha": "2025-06-30 22:23:00",
+      "hash": "cfb7bd3e61"
+    }
+  },
+  {
+    "id": 2,
+    "titulo": "abc",
+    "archivo": "abc_estudiante.pdf",
+    "autor": "estudiante@unap.edu.pe",
+    "estado": "Certificada",
+    "comentario": "Pasa nd con esa tesis",
+    "nota": "15",
+    "firma": {
+      "firmado_por": "decano@unap.edu.pe",
+      "fecha": "2025-07-02 14:50:59",
+      "hash": "0e8491f39e"
+    }
+  },
+  {
+    "id": 5,
+    "titulo": "ABC",
+    "archivo": "ABC_estudiante.pdf",
+    "autor": "estudiante@unap.edu.pe",
+    "estado": "Certificada",
+    "comentario": "asasasa",
+    "nota": "11",
+    "firma": {
+      "firmado_por": "decano@unap.edu.pe",
+      "fecha": "2025-07-05 02:31:45",
+      "hash": "80f82f49ea"
+    }
+  },
+  {
+    "id": 6,
+    "titulo": "qwe",
+    "archivo": "qwe_estudiante.pdf",
+    "autor": "estudiante@unap.edu.pe",
+    "estado": "Certificada",
+    "comentario": "123",
+    "nota": "13",
+    "firma": {
+      "firmado_por": "decano@unap.edu.pe",
+      "fecha": "2025-07-05 02:46:37",
+      "hash": "21562dfd11"
+    }
+  }
+]

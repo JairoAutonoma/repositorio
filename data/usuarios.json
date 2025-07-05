@@ -1,0 +1,17 @@
+[
+  {
+    "email": "estudiante@unap.edu.pe",
+    "password": "123",
+    "rol": "estudiante"
+  },
+  {
+    "email": "evaluador@unap.edu.pe",
+    "password": "123",
+    "rol": "evaluador"
+  },
+  {
+    "email": "decano@unap.edu.pe",
+    "password": "123",
+    "rol": "decano"
+  }
+]

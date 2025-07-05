@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura del Repositorio de Tesis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            blue: '#2563eb',
+                            slate: '#0f172a',
+                            gray: '#f8fafc'
+                        },
+                        accent: {
+                            blue: '#3b82f6',
+                            indigo: '#6366f1'
+                        }
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.08)',
+                        'card': '0 2px 8px rgba(0, 0, 0, 0.05)',
+                        'card-hover': '0 8px 25px rgba(0, 0, 0, 0.1)'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'float': 'float 6s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .architecture-svg {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-inter bg-primary-gray text-primary-slate">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-primary-blue">Repositorio Tesis</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="nav-link text-primary-slate">Inicio</a>
+                    <div class="flex space-x-4">
+                        <a href="login" class="px-4 py-2 rounded-md text-primary-blue border border-primary-blue hover:bg-primary-blue hover:text-white transition duration-300">Login</a>
+                        <a href="#" class="px-4 py-2 rounded-md bg-primary-blue text-white hover:bg-blue-600 transition duration-300">Registro</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-primary-slate">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-16">
+        <!-- Main Presentation Slide -->
+        <div class="min-h-screen flex flex-col items-center justify-center px-8 py-16">
+            <!-- Main Title -->
+            <div class="text-center mb-16 max-w-4xl animate-fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-primary-slate">
+                    Repositorio Digital<br>de Tesis Universitarias
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600">
+                    Arquitectura tecnológica escalable y segura
+                </p>
+            </div>
+
+            <!-- Stack -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
+                <!-- Amazon S3 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover">
+                    <div class="flex justify-center mb-4">
+                        <img src="frontend/img/s3.png" alt="Amazon S3" class="h-14">
+                    </div>
+                    <h3 class="font-semibold text-lg text-center mb-2 text-primary-slate">Amazon S3</h3>
+                    <p class="text-sm text-slate-500 text-center">Almacenamiento seguro y duradero para documentos</p>
+                </div>
+
+                <!-- CloudFront -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover">
+                    <div class="flex justify-center mb-4">
+                        <img src="frontend/img/cloudfront.png" alt="CloudFront" class="h-14">
+                    </div>
+                    <h3 class="font-semibold text-lg text-center mb-2 text-primary-slate">CloudFront</h3>
+                    <p class="text-sm text-slate-500 text-center">Distribución global de contenido</p>
+                </div>
+
+                <!-- SES -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover">
+                    <div class="flex justify-center mb-4">
+                        <img src="frontend/img/ses.png" alt="SES" class="h-14">
+                    </div>  
+                    <h3 class="font-semibold text-lg text-center mb-2 text-primary-slate">Amazon SES</h3>
+                    <p class="text-sm text-slate-500 text-center">Sistema de notificaciones</p>
+                </div>
+
+                <!-- VPS Elastika -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover">
+                    <div class="flex justify-center mb-4">
+                        <img src="frontend/img/elastika.webp" alt="VPS" class="h-14">
+                    </div>
+                    <h3 class="font-semibold text-lg text-center mb-2 text-primary-slate">VPS Elastika</h3>
+                    <p class="text-sm text-slate-500 text-center">Servidor de aplicaciones</p>
+                </div>
+
+                <!-- PostgreSQL -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover">
+                    <div class="flex justify-center mb-4">
+                        <img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="PostgreSQL" class="h-14">
+                    </div>
+                    <h3 class="font-semibold text-lg text-center mb-2 text-primary-slate">PostgreSQL</h3>
+                    <p class="text-sm text-slate-500 text-center">Base de datos relacional</p>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="mt-20 animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-primary-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Slide -->
+        <div class="min-h-screen flex flex-col items-center justify-center px-8 py-16 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <!-- Title -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-slate">Diagrama de Arquitectura</h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">Flujo de datos y componentes del sistema</p>
+                </div>
+
+                <!-- SVG -->
+                <div class="w-full flex justify-center">
+                    <object type="image/svg+xml" data="frontend/img/das.drawio.svg" class="architecture-svg">
+                        Tu navegador no soporta SVG. Aquí hay una imagen alternativa:
+                        <img src="frontend/img/das.drawio.svg" alt="Diagrama de Arquitectura">
+                    </object>
+                </div>
+
+                <!-- Benefits Section -->
+                <div class="mt-16 grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-soft border-l-4 border-primary-blue">
+                        <h3 class="font-semibold text-lg mb-3 text-primary-slate">Escalabilidad</h3>
+                        <p class="text-slate-600">La arquitectura crece automáticamente según la demanda sin afectar el rendimiento.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-soft border-l-4 border-accent-indigo">
+                        <h3 class="font-semibold text-lg mb-3 text-primary-slate">Disponibilidad</h3>
+                        <p class="text-slate-600">Sistema redundante que garantiza acceso continuo a los documentos.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-soft border-l-4 border-primary-blue">
+                        <h3 class="font-semibold text-lg mb-3 text-primary-slate">Seguridad</h3>
+                        <p class="text-slate-600">Protección de datos con cifrado, controles de acceso y backups automáticos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Subir Tesis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-orange-100 to-blue-200 min-h-screen flex items-center justify-center">
+
+
+
+
+  
+  <div class="bg-white shadow-xl p-8 rounded-xl max-w-xl w-full">
+    <h2 class="text-2xl font-semibold mb-6 text-blue-800">📤 Cargar Tesis-Repositorio Autonoma</h2>
+    <form id="uploadForm">
+      <label class="block mb-2 text-sm">Nombre de la Tesis:</label>
+      <input type="text" name="titulo" required class="w-full p-3 border rounded mb-4">
+
+      <label class="block mb-2 text-sm">Archivo PDF</label>
+      <input type="file" name="archivo" accept=".pdf" required class="w-full p-3 border rounded mb-6">
+
+      <button type="submit" class="bg-blue-600 text-white w-full py-3 rounded hover:bg-indigo-700">
+        Subir al Repositorio
+      </button>
+      
+
+    </form>
+
+    <button onclick="verEstado()" class="mt-4 bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600">
+  📄 Ver Estado de mis Tesis
+</button>
+
+<div id="estado" class="hidden mt-6 bg-gray-100 p-4 rounded"></div>
+
+<div class="text-right p-4">
+  <button onclick="logout()" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">
+    🔒 Finalizar Sesión
+  </button>
+</div>
+
+
+  </div>
+  <script src="/frontend/main.js"></script>
+</body>
+</html>
